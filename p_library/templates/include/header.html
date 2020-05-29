@@ -1,0 +1,57 @@
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<header class="header" id="home">
+	<div class="container-fluid px-lg-5">
+		<nav class="menu">
+			<label for="drop" class="toggle">
+			My Library
+				<div class="authorisation-name">
+					{% if username is None %}
+					<p>Вы вошли как {{ user.username }}</p>		
+					{% else %} 
+					<p>Вы вошли как гость<br></p>
+					{% endif %}    
+				</div>
+			</label>
+			<ul class="menu mt-2">
+
+				<li class="active menu-item">
+					<a "nav-link" href="/">Главная</a>
+					<div class="submenu header-submenu">
+						<ul>
+							<li><a href="../authors">авторы</a></li>
+							<li><a href="../../publishers">издательства</a></li>
+							<li><a href="/friends">читатели</a></li>
+							<li><a href="#contacts">контакты</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="active menu-item">
+					<a href="../register/">Регистрация</a>
+						<div class="submenu header-submenu">
+							<ul>
+								<li><a href="/login/vk-oauth2">Вход через VK</a></li>
+							</ul>
+						</div>
+				</li>
+
+				<li class="active menu-item">
+					<a href="../login">Авторизация</a>
+						<div class="submenu header-submenu">
+							<ul>
+								<li><a href="/login/vk-oauth2">Вход через VK</a></li>
+							</ul>
+						</div>
+				</li>
+
+				<li id="quit">
+					<a href="../logout">Выйти</a></p>
+				</li>                                
+			</ul>
+		</nav>
+	</div>
+</header>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>

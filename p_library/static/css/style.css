@@ -1,0 +1,179 @@
+
+body {
+  background: black;
+}
+
+h3 {
+  text-align: center;
+  color: olive;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+}
+
+.menu>label {
+  font-size: 30px;
+  margin-left: 30px;
+  margin-top: 16px;
+  flex-grow: 1;
+  font-family: "Tannenberg Fett";
+}
+
+.authorisation-name > p {
+  font-family: "Arrival";
+  font-size: 12px;
+}
+
+.menu>li>a {
+  color: black;
+  text-decoration: none;
+}
+
+.menu>li>a:hover {
+  color: pink;
+}
+
+.menu>ul>li {
+  display: inline; 
+  margin-right: 60px;
+  padding: 13px;
+  flex-grow: 1.2; 
+}
+
+.menu-item {
+  display: flex;  
+  cursor: pointer;
+}
+
+.header-submenu {
+  opacity: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.submenu>ul>li {
+  list-style-type: none;
+  font-size: 14px;
+}
+
+.submenu>ul>li>a {
+  text-decoration: none;
+  color: black;
+}
+
+.submenu>ul>li>a:hover {
+  color: pink;
+}
+
+#quit>a {
+  color: white;
+}
+
+#quit>a:hover {
+  color: pink;
+}
+
+.table {
+  width: 89%;
+  font-size: 14px;
+  margin-left: 30px;
+  background: gray;
+  border: 2px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td, th {
+  border: 2px solid white;
+  padding: 2px;
+}
+
+.image-field > img {
+  margin: 5px;
+  width: auto;
+  height: auto;
+  align: center;
+}
+
+/*publishers*/
+
+.list-rectangle {
+  list-style: none;
+  width: 90vw;
+  margin: 0;
+  margin-left: 25px;
+  padding: 100;
+}
+
+.list-rectangle>li {
+  position: relative;
+  display: block;
+  margin-bottom: .25rem;
+  padding: .525rem .1025rem .525rem 3.325rem;
+  color: black;
+  background: gray;
+  text-align: left;
+}
+
+.list-rectangle>li:last-child {
+  margin-bottom: 0;
+}
+
+.list-rectangle>li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2rem;
+  background: olive;
+}
+
+.footer {
+  display: flex;
+  margin-left: 50px;
+
+}
+
+.contact-info>a {
+  text-decoration: none;
+}
+
+.contact-info>a:hover {
+  color: pink;
+}
+
+.editContent>a {
+  text-decoration: none;
+}
+
+.editContent>a:hover {
+  color: pink;
+}
+
+.footer-right {
+  text-align: right;
+  padding-right: 60px;
+}
+
+.footer-right-saying {
+  font-family: "MurreyC";
+}
+
+@font-face {
+  font-family: "Tannenberg Fett";
+  src: url(../fonts/19072.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "MurreyC";
+  src: url(../fonts/19046.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}

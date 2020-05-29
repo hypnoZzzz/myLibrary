@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <title> {% block title %} {% endblock title %} </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
+    <script src="https://vk.com/js/api/openapi.js?168" type="text/javascript"></script>   
+<body>
+
+{% include 'include/header.html' %}
+    
+    {% block content %}
+
+    {% endblock content %}
+
+{% include 'include/footer.html' %}
+
+</body>

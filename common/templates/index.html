@@ -1,0 +1,16 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+ <meta charset="UTF-8">  
+ <title>Главная страница</title>  
+</head>  
+<body>  
+{% if username %}  
+    <h1>Привет, {{ username }}</h1>
+    <p><a href="/">на главную</a></p> 
+	<p><a href="logout">выйти из профиля</a></p>  
+{% else %}  
+    <p><a href="register/">зарегистрироваться</a><br><a href="login">войти на сайт</a><br><a href="/login/vk-oauth2">войти через vk</a><br><a href="/">войти как гость</a></p> 
+{% endif %}  
+</body>  
+</html>

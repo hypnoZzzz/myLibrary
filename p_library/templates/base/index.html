@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<hr>
+
+<table class="table table-dark">
+    <thead>
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Название</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Описание</th>
+      <th scope="col">Год написания</th>
+      <th scope="col">Автор</th>
+      <th scope="col">Страна</th>
+      <th scope="col">Копии</th>
+      <th scope="col">Изменить</th>
+      <th scope="col">Картинка</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books %}
+    <tr>
+        <td>{{ forloop.counter }} {{ item }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.ISBN }}</td>
+        <td><details>{{ book.description }}</details></td>
+        <td>{{ book.year_release }}</td>
+        <td>{{ book.author.full_name }}</td>
+        <td>{{ book.author.country }}</td>
+        <td>{{ book.copy_count }}</td>
+        <td>
+            <details>
+            <form action="/index/book_increment/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{book.id}}" />
+                <input type="submit" value="+" />
+            </form>
+            <form action="index/book_decrement/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{book.id}}" />
+                <input type="submit" value="-" />
+            </form>
+            </details>
+        </td>
+        <td class="image-field">{% if book.book_cover %}
+                <img src="{{ book.book_cover.url }}" alt="Cover">
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<hr>
+
+{% endblock content %}
+
+
+
+
